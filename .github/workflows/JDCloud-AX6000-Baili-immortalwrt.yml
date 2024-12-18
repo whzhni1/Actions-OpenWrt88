@@ -148,7 +148,7 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 打包上传固件到Actions Artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: ${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.DEVICE_NAME }}${{ env.BUILD_DOCKERMAN }}
